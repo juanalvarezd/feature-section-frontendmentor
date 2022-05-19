@@ -1,0 +1,158 @@
+:root {
+  /* Colors */
+  /*  Primary */
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  /* Neutral */
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-Gray: hsl(0, 0%, 98%);
+}
+html{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+span{
+    color: var(--grayish-blue);
+    font-weight: 200;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body{
+    background-color: var(--very-light-Gray);
+    margin: 0;
+}
+
+.card{
+    border-radius: 0.5rem;
+    background-color: #fff;
+    border-top:solid medium;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem 2rem 2rem;
+    box-shadow: 0px 11px 20px -5px var(--grayish-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card__image{
+    align-self: flex-end;
+    margin-top: 1rem;
+}
+
+.card__text{
+    color: var(--grayish-blue);
+}
+
+.card__title{
+    color: var(--very-dark-blue);
+    font-weight: 600;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.main__cards{    
+    display: grid;
+    grid-template-columns: minmax(330px, 400px);
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: 
+    "title"
+    "description"
+    "card-supervisor"
+    "card-tb"
+    "card-karma"
+    "card-calculator";
+    margin: 1rem;
+}
+
+.main__title{
+    grid-area: title;
+    margin: 0;
+    font-size: 1.7rem;
+    color: var(--very-dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__description{
+    grid-area: description;
+    text-align: center;
+    color: var(--grayish-blue);
+    margin-bottom: 3rem;
+}
+
+.main__card-supervisor{
+    grid-area: card-supervisor;
+    border-color: var(--cyan);
+}
+
+.main__card-tb{
+    grid-area: card-tb;
+    border-color: var(--red);
+}
+
+.main__card-karma{
+    grid-area: card-karma;
+    border-color: var(--orange);
+}
+
+.main__card-calculator{
+    grid-area: card-calculator;
+    border-color: var(--blue);
+}
+
+@media (min-width: 1090px){
+    .card{
+        max-width: 400px;
+        height: 300px;
+        margin: 0 0 1.5rem 1rem;
+    }
+    
+    .main__cards{
+        display: grid;
+        grid-template-columns: repeat(3, minmax(350px, 400px));
+        grid-template-rows:repeat(6, auto);
+        grid-template-areas:
+        "title            title                   title"
+        "     .           description               .  "
+        "     .            card-tb                  .  "
+        "card-supervisor   card-tb      card-calculator"
+        "card-supervisor  card-karma   card-calculator"
+        "       .         card-karma         .       ";
+        align-items: center;
+        justify-items: center;
+    }
+
+    .main__description{
+        display: inline-block;
+    }
+
+    .main__title{
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+    
+}
